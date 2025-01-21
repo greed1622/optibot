@@ -1,12 +1,17 @@
 <?php
 
 use App\Http\Controllers\ProfileController;
+use App\Livewire\Vents\Index;
 use Illuminate\Support\Facades\Route;
+
+// Route::get('/', function () {
+//     return view('welcome');
+// });
 
 Route::get('/', function () {
     return view('welcome');
 });
-
+Route::get('/vents/index', Index::class);
 Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard');
