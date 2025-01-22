@@ -1,5 +1,5 @@
 <div>
-    <h1 style="color: red;">
-        Vents
-    </h1>
+    {{-- <p>Selected Clinic ID: {{ request()->route('id') }}</p> --}}
+    <p>Selected Clinic Name: {{ urldecode(request()->route('name')) }}</p>
+
 </div>

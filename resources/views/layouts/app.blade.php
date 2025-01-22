@@ -38,7 +38,7 @@
 
 <body class="font-sans antialiased">
     <section class="body">
-        @include('/layouts.navigation')
+        @livewire('layouts.navigation')
         {{-- <div class="min-h-screen bg-gray-100 dark:bg-gray-900">
             @include('layouts.navigation')
 
@@ -60,6 +60,8 @@
             {{ $slot }}
         </main>
     </section>
+    <script src="{{ asset('vendor/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
+
 </body>
 
 </html>

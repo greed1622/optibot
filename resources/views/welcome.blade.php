@@ -59,32 +59,35 @@
                 <div class="row mt-2">
                     <div class="col-12 col-md-6 col-lg-4 mb-4">
                         <div class="ps-3 pe-3 pb-3 pt-2 rounded" style="background-color: #5980a6;">
-                            <section class="card w-100 mt-2">
-                                <header class="card-header d-flex flex-column align-items-center justify-content-center"
-                                    style="height: 300px;">
-                                    <img src="img/logo/vents-logo.png" class="img-fluid"
-                                        style="max-width: 100%; max-height: 180px; height: auto;"
-                                        alt="The VENTS Clinic Logo">
-                                    <h2 class="card-title pt-2"><a href="/vents/index">The VENTS Clinic</a></h2>
-                                </header>
-                                <div class="card-body">
-                                    <div class="row">
-                                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Commodi soluta,
-                                            eveniet sint corporis, suscipit neque, assumenda quae ipsum quia enim quasi
-                                            deleniti nihil esse iusto rerum ratione dolorum nesciunt porro!</p>
-                                    </div>
-                                    <div class="row">
-                                        <iframe
-                                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1153.0071495516424!2d124.23118306667702!3d13.58224681944664!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x33a017d94c918f43%3A0xbccd98906566e5c!2sVENTS%20Clinic!5e0!3m2!1sen!2sph!4v1730610540478!5m2!1sen!2sph"
-                                            width="600" height="450" style="border:0;" allowfullscreen=""
-                                            loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-                                    </div>
+                            @php
+                                $clinics = \App\Models\Clinic::all();
+                            @endphp
 
-                                </div>
-                            </section>
+                            @if ($clinics->isNotEmpty())
+                                @foreach ($clinics as $clinic)
+                                    <section class="card w-100 mt-2">
+                                        <header
+                                            class="card-header d-flex flex-column align-items-center justify-content-center"
+                                            style="height: 300px;">
+                                            <img src="{{ asset('img/logo/vents-logo.png') }}" class="img-fluid"
+                                                style="max-width: 100%; max-height: 180px; height: auto;"
+                                                alt="{{ $clinic->name ?? 'Clinic' }} Logo">
+                                            <h2 class="card-title pt-2">
+                                                <a
+                                                    href="{{ url('/vents/index/' . ($clinic->id ?? 1) . '/' . urlencode($clinic->clinic_name ?? 'Unknown Clinic')) }}">
+                                                    {{ $clinic->name ?? ($clinic->clinic_name ?? 'Unknown Clinic') }}
+                                                </a>
+                                            </h2>
+                                        </header>
+                                    </section>
+                                @endforeach
+                            @else
+                                <p>No clinics found.</p>
+                            @endif
+
                         </div>
                     </div>
-                    <div class="col-12 col-md-6 col-lg-4 mb-4">
+                    {{-- <div class="col-12 col-md-6 col-lg-4 mb-4">
                         <div class="ps-3 pb-3 pe-3 pt-2 rounded" style="background-color: #5980a6;">
                             <section class="card w-100 mt-2">
                                 <header class="card-header d-flex flex-column align-items-center justify-content-center"
@@ -138,7 +141,7 @@
                                 </div>
                             </section>
                         </div>
-                    </div>
+                    </div> --}}
                 </div>
             </div>
         </div>

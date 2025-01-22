@@ -3,6 +3,7 @@
 use App\Http\Controllers\ProfileController;
 use App\Livewire\Vents\Index;
 use Illuminate\Support\Facades\Route;
+use Illuminate\Support\Facades\Session;
 
 // Route::get('/', function () {
 //     return view('welcome');
@@ -11,6 +12,10 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+Route::get('/vents/index/{id}/{name}', function ($id, $name) {
+    return view('livewire.vents.index');
+});
+
 Route::get('/vents/index', Index::class);
 Route::get('/dashboard', function () {
     return view('dashboard');

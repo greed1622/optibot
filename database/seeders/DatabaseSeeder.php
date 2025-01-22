@@ -3,6 +3,7 @@
 namespace Database\Seeders;
 
 use App\Models\User;
+use App\Models\Clinic;
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 
@@ -18,6 +19,11 @@ class DatabaseSeeder extends Seeder
         User::factory()->create([
             'name' => 'Test User',
             'email' => 'test@example.com',
+        ]);
+        Clinic::insert([
+            ['clinic_name' => 'The VENTS Clinic'],
+            ['clinic_name' => 'Tardecilla Clinic'],
+            ['clinic_name' => 'Assumpta Maternity & Medical Clinic'],
         ]);
     }
 }
