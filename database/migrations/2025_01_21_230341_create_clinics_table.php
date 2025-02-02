@@ -14,6 +14,7 @@ return new class extends Migration
         Schema::create('clinics', function (Blueprint $table) {
             $table->id();
             $table->string('clinic_name');
+            $table->string('clinic_logo');
             $table->timestamps();
         });
     }

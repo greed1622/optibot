@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\ProfileController;
+use App\Livewire\LandingPage;
 use App\Livewire\Vents\Index;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Session;
@@ -9,14 +10,14 @@ use Illuminate\Support\Facades\Session;
 //     return view('welcome');
 // });
 
-Route::get('/', function () {
-    return view('welcome');
-});
-Route::get('/vents/index/{id}/{name}', function ($id, $name) {
-    return view('livewire.vents.index');
-});
+Route::get('/', LandingPage::class);
+// Route::get('/vents/index/{id}/{name}', function ($id, $name) {
+//     return view('livewire.vents.index', compact('id', 'name'))->layout('layouts.app');
+// });
+Route::get('/index', Index::class)->name('index');
 
-Route::get('/vents/index', Index::class);
+// Route::get('/vents/index/{id}/{name}', Index::class);
+
 Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard');

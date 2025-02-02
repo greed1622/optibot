@@ -1,5 +1,12 @@
 <div>
-    {{-- <p>Selected Clinic ID: {{ request()->route('id') }}</p> --}}
-    <p>Selected Clinic Name: {{ urldecode(request()->route('name')) }}</p>
+    <h2 class="mt-0 mb-0 font-weight-bold text-dark">Dashboard</h2>
+    <div class="row">
+        <h2>Selected Clinic Details</h2>
+        <p><strong>ID:</strong> {{ $id }}</p>
+        <p>{{ $logo }}</p>
+
+        Test
+    </div>
+
 
 </div>

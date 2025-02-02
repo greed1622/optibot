@@ -20,10 +20,22 @@ class DatabaseSeeder extends Seeder
             'name' => 'Test User',
             'email' => 'test@example.com',
         ]);
+        // Clinic::insert([
+        //     ['clinic_name' => 'The VENTS Clinic'],
+        //     ['clinic_name' => 'Tardecilla Clinic'],
+        //     ['clinic_name' => 'Assumpta Maternity & Medical Clinic'],
+        // ]);
         Clinic::insert([
-            ['clinic_name' => 'The VENTS Clinic'],
-            ['clinic_name' => 'Tardecilla Clinic'],
-            ['clinic_name' => 'Assumpta Maternity & Medical Clinic'],
+            'clinic_name' => 'The VENTS Clinic',
+            'clinic_logo' => 'vents-logo',
+        ]);
+        Clinic::insert([
+            'clinic_name' => 'Tardecilla Clinic',
+            'clinic_logo' => 'tardecilla-logo',
+        ]);
+        Clinic::insert([
+            'clinic_name' => 'Assumpta Maternity & Medical Clinic',
+            'clinic_logo' => 'assumpta-logo',
         ]);
     }
 }

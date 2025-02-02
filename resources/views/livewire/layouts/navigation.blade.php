@@ -100,9 +100,12 @@
 </nav> --}}
 <header class="header bg-dark">
     <div class="logo-container">
-        <a href="pages-vents-index.html" class="logo">
-            <img src="{{ asset('img/logo/vents-logo.png') }}" class="d-flex img-fluid" style="height: 50px"
-                alt="Vents Clinic" />
+        <a href="/index" class="logo">
+
+            {{-- <img src="{{ asset('img/logo/vents-logo.png') }}" class="d-flex img-fluid" style="height: 50px"
+                alt="Vents Clinic" /> --}}
+            <img src="{{ asset('img/logo/' . $logo . '.png') }}" class="d-flex img-fluid" style="height: 50px"
+                alt="{{ $logo }}">
     </div>
     <div class="d-md-none toggle-sidebar-left" data-toggle-class="sidebar-left-opened" data-target="html"
         data-fire-event="sidebar-left-opened">

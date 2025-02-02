@@ -100,6 +100,7 @@
 </nav> --}}
 <header class="header bg-dark">
     <div class="logo-container">
+
         <a href="pages-vents-index.html" class="logo">
             <img src="{{ asset('img/logo/vents-logo.png') }}" class="d-flex img-fluid" style="height: 50px"
                 alt="Vents Clinic" />

@@ -56,9 +56,13 @@
                 {{ $slot }}
             </main>
         </div> --}}
-        <main>
-            {{ $slot }}
-        </main>
+        <div class="inner-wrapper">
+            @livewire('layouts.sidebar')
+            <main>
+                {{ $slot }}
+            </main>
+        </div>
+
     </section>
     <script src="{{ asset('vendor/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
 
