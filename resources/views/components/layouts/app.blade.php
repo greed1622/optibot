@@ -34,6 +34,7 @@
     <!-- Head Libs -->
     <script src="{{ asset('vendor/modernizr/modernizr.js') }}"></script>
     @vite(['resources/css/app.css', 'resources/js/app.js'])
+    @livewireStyles()
 </head>
 
 <body>
@@ -102,7 +103,7 @@
 
     <!-- Theme Initialization Files -->
     <script src="{{ asset('js/theme.init.js') }}"></script>
-
+    @livewireScripts()
 </body>
 
 </html>
